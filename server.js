@@ -23,5 +23,5 @@ app.get('/coin_profile', function(req, res) {
     res.sendFile(__dirname + '/coin_profile.html');
 });
 
-server.listen(8080);
-console.log('Listening on port 8080');
+server.listen(80);
+console.log('Listening on port 80');
