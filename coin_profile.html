@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Bitcoin Profile - Qoin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <link rel="stylesheet" href="styles.css" />
         <script src="animations.js"></script>
         <script src="chart.js"></script>
@@ -46,11 +47,34 @@
             </div>
         </div>
         <div id="profile-content" class="content">
-            <span class="big-text">Bitcoin (BTC)</span>
-            <span class="big-text gain" id="gain">+$25</span>
-            <canvas id="profile-graph" class='graph'></canvas>
-            <span class="medium-text">Purchased at $1350</span>
-            <input type="button" value="Sell now ($1375)" class="form-button medium-text"/>
+            <div class='tab-bar'>
+                <div id='menu-btn'><img src='ham-menu-icon.svg'/></div>
+                <div class='tab-button'>Info</div>
+                <div class='tab-button'>Trade</div>
+            </div>
+            <div class='screens'>
+                <div class='screen'>
+                    <span class="big-text">Bitcoin (BTC)</span>
+                    <span class="medium-text gain" id="gain">+2.59%</span>
+                    <div class='graph'>
+                        <canvas id="profile-graph"></canvas>
+                        <div class='graph-controls'>
+                            <div class='tab-button'>1H</div>
+                            <div class='tab-button'>1D</div>
+                            <div class='tab-button'>1W</div>
+                            <div class='tab-button'>1M</div>
+                            <div class='tab-button'>1Y</div>
+                            <div class='tab-button'>All</div>
+                        </div>
+                    </div>
+                    <span class="big-text gain">+$25</span>
+                    <span class="medium-text">Purchased at $1350</span>
+                    <input type="button" value="Sell now ($1375)" class="form-button medium-text"/>
+                </div>
+                <div class='screen'>
+                    adjaslkdjsalkdjsakl
+                </div>
+            </div>
         </div>
     </body>
 </html>

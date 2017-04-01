@@ -1,6 +1,6 @@
 body {
     background:#37393a;
-    font-size:7vw;
+    font-size:1vw;
     font-family: 'Roboto', sans-serif;
     color:#D1D1D1;
 }
@@ -39,12 +39,12 @@ form * {
     border-bottom:0.5vw solid #28A2FF;
     background:none;
     padding:1.5vw 2vw;
-    font-size:1em;
+    font-size:7em;
 }
 .form-button {
     flex-grow: 0;
     cursor:pointer;
-    font-size:1em;
+    font-size:7em;
     margin-top:5vw;
     background:#28A2FF;
     position:relative;
@@ -61,7 +61,7 @@ form * {
     background:none;
     cursor:pointer;
     color:#28A2FF;
-    font-size:0.8em;
+    font-size:5.6em;
     margin:1vw 0 0 0;
 }
 
@@ -73,7 +73,6 @@ form * {
     height:100%;
     overflow:scroll;
     top:0;
-    right:101vw;
     z-index:1;
     background:#222;
     box-shadow:0 0 1em 0 black;
@@ -84,11 +83,12 @@ form * {
     box-sizing:border-box;
     border-top:1px solid #555;
     border-bottom:1px solid #000;
-    font-size: 1em;
+    font-size: 7em;
     color:#D1D1D1;
     cursor:pointer;
 }
 #sidebar-dash-button {
+    font-size:1em;
     text-align: center;
 }
 #sidebar-dash-button * {
@@ -103,34 +103,63 @@ form * {
 .loss {
     color:#EF476F;
 }
+.sidebar-item.loss {
+    border-right: 0.15em solid #EF476F;
+}
+.sidebar-item.gain {
+    border-right: 0.15em solid #0FFF95;
+}
 
 #dash-content {
     
 }
 .content {
+    position:absolute;
+    top:0;
+    left:0;
     display:flex;
     flex-flow: column nowrap;
     align-items:center;
     justify-content: center;
+    overflow-x:hidden;
     height:100%;
     width:100%;
 }
 .graph {
-    
+    width:90vw;
+    height:70vw;
+    margin-bottom:2rem;
+    display:flex;
+    flex-flow:column nowrap;
 }
 #dash-graph {
-    width:80vw;
-    height:60vw;
-    margin-bottom:2em;
+    width:100%;
+    height:70vw;
+}
+.graph-controls {
+    width:100%;
+    display:flex;
+    flex-flow:row nowrap;
+}
+.graph-controls * {
+    flex: 1 1;
+}
+.tab-button {
+    text-align:center;
+    font-size:4em;
+    padding:0.5em 0.5em;
+    margin:0 0.5em;
+    border-bottom:0.14em solid transparent;
+    cursor:pointer;
 }
 .big-text {
-    font-size:1.5em;
+    font-size:10.5em;
 }
 .medium-text {
-    font-size:0.8em;
+    font-size:5.6em;
 }
 .tiny-text {
-    font-size:0.5em;
+    font-size:3.5em;
 }
 #dash-content .big-text, #dash-content .medium-text {
     margin-top:1em;
@@ -146,13 +175,57 @@ form * {
     margin-bottom:1em;
 }
 #profile-graph {
-    width:80vw;
-    height:50vw;
-    margin-bottom:3em;
+    width:100%;
+    height:70vw;
 }
 #profile-content input[type="button"] {
     width:auto;
     padding:0.2em 0.5em;
     color:white;
     margin-top:0.5em;
+}
+.tab-bar {
+    width:100%;
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:center;
+    justify-content: center;
+    background:#222;
+}
+.tab-bar .tab-button {
+    font-size:5em;
+    padding-left:2em;
+    padding-right:2em;
+    padding-top:1em;
+    border-bottom:0.2em solid transparent;
+}
+.tab-button:nth-child(1) {
+    border-bottom-color:#67C8FF;
+}
+.screens {
+    display:flex;
+    flex-flow:row nowrap;
+    flex-grow:1;
+    align-self:flex-start;
+    align-items:stretch;
+}
+.screen {
+    position:relative;
+    display:inline-block;
+    margin-left:0;
+    left:0;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    justify-content:center;
+    width:100vw;
+    transition:margin-left cubic-bezier(.07,.99,.49,.99) 0.15s;
+}
+#menu-btn {
+    position:absolute;
+    top:0;
+    left:0;
+    background-image:url('ham-menu-icon.svg') no-repeat;
+    background-position:center;
+    background-size:cover;
 }

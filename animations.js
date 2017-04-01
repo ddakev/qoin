@@ -3,11 +3,24 @@ var dir = 0;
 var moveSide = false;
 var animation = null;
 window.addEventListener('load', function() {
+    document.getElementById('sidebar').style.left = -parseFloat(getComputedStyle(document.getElementById('sidebar')).width) + 'px';
+    document.getElementById('menu-btn').style.width = parseFloat(getComputedStyle(document.getElementsByClassName('tab-bar')[0]).height)*5/8 + 'px';
+    document.getElementById('menu-btn').style.height = parseFloat(getComputedStyle(document.getElementsByClassName('tab-bar')[0]).height)*5/8 + 'px';
+    document.getElementById('menu-btn').style.top = parseFloat(getComputedStyle(document.getElementsByClassName('tab-bar')[0]).height)*3/16 + 'px';
+    document.getElementById('menu-btn').addEventListener('click', function(e) {
+        if(parseFloat(getComputedStyle(document.getElementById('sidebar')).left) > -parseFloat(getComputedStyle(document.getElementById('sidebar')).width)) {
+            animMove(document.getElementById('sidebar'), -parseFloat(getComputedStyle(document.getElementById('sidebar')).width));
+        }
+        else {
+            animMove(document.getElementById('sidebar'), 0);
+        }
+    });
     document.addEventListener('touchstart', function(e) {
         touchX = e.touches[0].clientX;
         if(touchX < window.innerWidth/5 || parseFloat(getComputedStyle(document.getElementById('sidebar')).left) > -parseFloat(getComputedStyle(document.getElementById('sidebar')).width)) {
             moveSide = true;
         }
+        else moveSide = false;
     });
     document.addEventListener('touchmove', function(e) {
         if(!touchX) {
@@ -48,6 +61,31 @@ window.addEventListener('load', function() {
     document.getElementById('sidebar').addEventListener('scroll', function(e) {
         moveSide = false;
         document.getElementById('sidebar').style.left = '0px';
+    });
+    Array.prototype.forEach.call(document.getElementsByClassName('graph-controls')[0].getElementsByClassName('tab-button'), function(tb) {
+        tb.addEventListener('click', function(e) {
+            var buttons = document.getElementsByClassName('graph-controls')[0].getElementsByClassName('tab-button');
+            for(var i=0; i<buttons.length; i++) buttons[i].style.borderBottomColor = 'transparent';
+            for(var i=0; i<buttons.length; i++) {
+                if(buttons[i] === e.target) {
+                    buttons[i].style.borderBottomColor = '#67C8FF';
+                    break;
+                }
+            }
+        });
+    });
+    Array.prototype.forEach.call(document.getElementsByClassName('tab-bar')[0].getElementsByClassName('tab-button'), function(tb) {
+        tb.addEventListener('click', function(e) {
+            var buttons = document.getElementsByClassName('tab-bar')[0].getElementsByClassName('tab-button');
+            for(var i=0; i<buttons.length; i++) buttons[i].style.borderBottomColor = 'transparent';
+            for(var i=0; i<buttons.length; i++) {
+                if(buttons[i] === e.target) {
+                    buttons[i].style.borderBottomColor = '#67C8FF';
+                    document.getElementsByClassName('screen')[0].style.marginLeft = -window.innerWidth*i + 'px';
+                    break;
+                }
+            }
+        });
     });
 });
 
