@@ -1,34 +1,73 @@
+/*
+black:  #212121
+blue:   #2196F3
+white:  #D1D1D1
+green:  #00E676
+red:    #EF5350
+*/
+
 body {
-    background:#37393a;
+    background:#212121;
     font-size:1vw;
     font-family: 'Roboto', sans-serif;
     color:#D1D1D1;
+    user-select: none;
 }
 *::-webkit-input-placeholder {
-    color: #111;
-    text-shadow:2px 2px #454545;
+    color: #D1D1D1;
 }
 *::-moz-placeholder {
-    color: #111;
-    text-shadow:2px 2px #454545;
+    color: #D1D1D1;
 }
 *:-ms-input-placeholder {
-    color: #111;
-    text-shadow:2px 2px #454545;
+    color: #D1D1D1;
 }
 *:-moz-placeholder {
-    color: #111;
-    text-shadow:2px 2px #454545;
+    color: #D1D1D1;
+}
+#login-container {
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    justify-content: space-around;
+}
+#login-container .form-button {
+    width:100%;
+}
+#login-logo {
+    flex-basis:50vw;
+    width:90vw;
+    flex-shrink:1;
+    background:url('logo.svg') no-repeat;
+    background-position:center;
+    background-size:contain;
+}
+#login_button {
+    display:block;
+    width:100%;
+}
+#register_button {
+    display:block;
+    margin:0;
+}
+a {
+    outline:none;
+    text-decoration: none;
+}
+a:active, a:focus {
+    outline:none;
 }
 form {
     display:flex;
+    flex-shrink:0;
     flex-flow: column nowrap;
     align-items: center;
     justify-content:flex-end;
     width:100%;
     padding:2vw;
     box-sizing:border-box;
-    height:100%;
 }
 form * {
     box-sizing:padding-box;
@@ -36,33 +75,42 @@ form * {
 }
 .form-textbox {
     border:none;
-    border-bottom:0.5vw solid #28A2FF;
+    user-select: auto;
+    border-bottom:0.5vw solid #757575;
     background:none;
-    padding:1.5vw 2vw;
-    font-size:7em;
+    align-self:stretch;
+    text-align:center;
+    padding:0.3em 0.4em;
+    font-size:5em;
+    color: #D1D1D1;
+    transition: border-bottom-color 0.3s;
+}
+.form-textbox:active, .form-textbox:focus {
+    outline:none;
+    border-bottom-color:#2196F3;
 }
 .form-button {
     flex-grow: 0;
     cursor:pointer;
-    font-size:7em;
-    margin-top:5vw;
-    background:#28A2FF;
+    font-size:5em;
+    margin-top:0.5em;
+    margin-bottom:0;
+    background:#2196F3;
     position:relative;
-    width:100%;
     display:block;
     color:white;
-    border-radius:1.5vw;
+    border-radius:3px;
     border:none;
-    padding:2vw 0;
-    box-shadow:0 1vw 0 0 #306BAC;
+    padding:0.4em 0;
+    box-shadow:1px 5px 20px -5px rgba(0,0,0,0.8);
 }
 .form-link {
     border:none;
     background:none;
     cursor:pointer;
     color:#28A2FF;
-    font-size:5.6em;
-    margin:1vw 0 0 0;
+    font-size:5em;
+    margin:0 0 0 0;
 }
 
 #sidebar {
@@ -74,10 +122,11 @@ form * {
     overflow:scroll;
     top:0;
     z-index:1;
-    background:#222;
+    background:#333;
     box-shadow:0 0 1em 0 black;
 }
 .sidebar-item {
+    display:block;
     width:100%;
     padding: 5vw 3vw;
     box-sizing:border-box;
@@ -86,6 +135,9 @@ form * {
     font-size: 7em;
     color:#D1D1D1;
     cursor:pointer;
+}
+.sidebar-item:first-child {
+    border-top:none;
 }
 #sidebar-dash-button {
     font-size:1em;
@@ -97,22 +149,41 @@ form * {
 #sidebar .tiny-text {
     margin:0 0 1em 0;
 }
-.gain {
-    color:#0FFF95;
+.gain .coin-gain, .big-text.gain{
+    color:#00E676;
 }
-.loss {
-    color:#EF476F;
+.loss .coin-gain, .big-text.loss{
+    color:#EF5350;
+}
+.medium-text.gain {
+    color:#00E676;
+}
+.medium-text.loss {
+    color:#EF5350;
 }
 .sidebar-item.loss {
-    border-right: 0.15em solid #EF476F;
+    border-right: 0.15em solid #EF5350;
+    box-shadow:inset -35px 0 50px -50px #EF5350;
 }
 .sidebar-item.gain {
-    border-right: 0.15em solid #0FFF95;
+    border-right: 0.15em solid #00E676;
+    box-shadow:inset -35px 0 50px -50px #00E676;
 }
-
-#dash-content {
+.coin-info {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.coin-name {
     
 }
+.coin-gain {
+    font-size:0.6em;
+    font-weight:bold;
+    opacity:0.3;
+}
+
 .content {
     position:absolute;
     top:0;
@@ -122,15 +193,24 @@ form * {
     align-items:center;
     justify-content: center;
     overflow-x:hidden;
-    height:100%;
+    height:95%;
     width:100%;
+}
+#dash-content {
+    justify-content: space-between;
+}
+#dash-content .tab-bar .tab-button {
+    opacity:0;
 }
 .graph {
     width:90vw;
-    height:70vw;
-    margin-bottom:2rem;
+    padding:10vw 5vw 0 5vw;
+    flex-basis:60vh;
     display:flex;
     flex-flow:column nowrap;
+    justify-content: flex-end;
+    background:#252525;
+    box-shadow:0 15px 15px -15px black;
 }
 #dash-graph {
     width:100%;
@@ -146,29 +226,35 @@ form * {
 }
 .tab-button {
     text-align:center;
+    color:#757575;
+    font-weight:bold;
     font-size:4em;
     padding:0.5em 0.5em;
     margin:0 0.5em;
     border-bottom:0.14em solid transparent;
+    box-shadow: 0 15px 30px -12px transparent;
+    transition: border-bottom-color 0.3s, box-shadow 0.3s;
     cursor:pointer;
 }
+.graph-controls .tab-button:first-child {
+    box-shadow: 0 15px 30px -12px rgba(33,150,243, 0.8);
+}
 .big-text {
-    font-size:10.5em;
+    font-size:10em;
 }
 .medium-text {
-    font-size:5.6em;
+    font-size:5em;
 }
 .tiny-text {
-    font-size:3.5em;
+    font-size:3em;
 }
 #dash-content .big-text, #dash-content .medium-text {
-    margin-top:1em;
+    margin-top:0.5em;
 }
 #sell-btn {
     width:auto;
-    padding:0.2em 0.5em;
-    color:white;
-    margin-top:0;
+    padding-left:4em;
+    padding-right:4em;
 }
 
 #gain {
@@ -176,11 +262,21 @@ form * {
 }
 #profile-graph {
     width:100%;
-    height:70vw;
+    height:60vw;
 }
-#profile-content input[type="button"] {
+#profile-title {
+    margin-top:0.5em;
+    text-align: center;
+}
+#profile-content input[type='radio'] {
+    display:none;
+}
+#profile-content label {
+    display:button;
+    text-align: center;
     width:auto;
-    padding:0.2em 0.5em;
+    padding-left:2em;
+    padding-right:2em;
     color:white;
     margin-top:0.5em;
 }
@@ -190,7 +286,6 @@ form * {
     flex-flow:row nowrap;
     align-items:center;
     justify-content: center;
-    background:#222;
 }
 .tab-bar .tab-button {
     font-size:5em;
@@ -199,8 +294,8 @@ form * {
     padding-top:1em;
     border-bottom:0.2em solid transparent;
 }
-.tab-button:nth-child(1) {
-    border-bottom-color:#67C8FF;
+.tab-button:first-child {
+    border-bottom-color:#2196F3;
 }
 .screens {
     display:flex;
@@ -228,4 +323,46 @@ form * {
     background-image:url('ham-menu-icon.svg') no-repeat;
     background-position:center;
     background-size:cover;
+}
+.trade-buttons {
+    flex-shrink: 0;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    align-self:stretch;
+}
+#profile-content .screen:nth-child(2) .form-button {
+    align-self:stretch;
+    flex-shrink: 0;
+    margin:0.5em;
+}
+#profile-content .form-button {
+    padding:0.5em 3em;
+}
+.trade-buttons .form-button {
+    flex-grow:1;
+    margin: 0 0.5em;
+}
+#profile-content .screen:nth-child(2) {
+    justify-content:flex-end;
+}
+#profile-content .form-textbox {
+    margin-top:1em;
+    text-align: center;
+}
+#profile-content label {
+    transition:none;
+}
+#buy:checked+label {
+    background:#154567;
+}
+#sell:checked+label {
+    background:#154567;
+}
+#profile-content .graph {
+    flex-basis:auto;
+    padding-top:10px;
+    justify-content: flex-end;
+    margin-bottom:5em;
+    background: linear-gradient(to bottom, #212121, #252525);
 }

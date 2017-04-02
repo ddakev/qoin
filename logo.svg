@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256">
+<g id="Layer_2">
+</g>
+<g id="Layer_1">
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="56.709" y1="44.317" x2="56.709" y2="181"/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="94" y1="31.189" x2="94" y2="195.357"/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="130" y1="32.794" x2="130" y2="192.523"/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="166" y1="45.287" x2="166" y2="181.969"/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="38.789" y1="63.26" x2="183.206" y2="63.26"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="164.7734" y1="194.6133" x2="108.3603" y2="96.903">
+		<stop  offset="0.5968" style="stop-color:#D1D1D1;stop-opacity:0.2"/>
+		<stop  offset="0.6377" style="stop-color:#CAD1CB;stop-opacity:0.2812"/>
+		<stop  offset="0.6964" style="stop-color:#B7D1BB;stop-opacity:0.3977"/>
+		<stop  offset="0.7658" style="stop-color:#98D2A1;stop-opacity:0.5354"/>
+		<stop  offset="0.8435" style="stop-color:#6DD27C;stop-opacity:0.6895"/>
+		<stop  offset="0.9269" style="stop-color:#36D24D;stop-opacity:0.8549"/>
+		<stop  offset="1" style="stop-color:#00D31F"/>
+	</linearGradient>
+	
+		<path opacity="0.6" fill="url(#SVGID_1_)" stroke="#00E676" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M50.792,173.104c0,0,30.086-24.682,44.918-50.519l8.612,10.765c0,0,5.978-4.066,15.908-43.301l34.332,37.799l7.656-32.057
+		l11.483-3.35l2.393-7.655h9.569l6.777-16.176c0,0,45.994,49.825-14.363,116.732C178.077,185.342,114.964,242.281,50.792,173.104z"
+		/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="30.789" y1="99.531" x2="193.454" y2="99.531"/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="30.789" y1="132.644" x2="193.454" y2="132.644"/>
+	<line opacity="0.5" fill="none" stroke="#999999" stroke-miterlimit="10" x1="38.789" y1="168" x2="183.206" y2="168"/>
+	<circle fill="none" stroke="#D1D1D1" stroke-width="22" stroke-miterlimit="10" cx="110.997" cy="113.628" r="88.038"/>
+	
+		<line fill="none" stroke="#D1D1D1" stroke-width="22" stroke-linecap="round" stroke-miterlimit="10" x1="171.638" y1="177.45" x2="215.27" y2="229.527"/>
+	
+		<circle fill="none" stroke="#D1D1D1" stroke-width="22" stroke-linecap="round" stroke-miterlimit="10" cx="277.466" cy="163.628" r="50"/>
+	
+		<line fill="none" stroke="#D1D1D1" stroke-width="22" stroke-linecap="round" stroke-miterlimit="10" x1="362.555" y1="99.531" x2="362.555" y2="190.918"/>
+	<path fill="none" stroke="#D1D1D1" stroke-width="22" stroke-linecap="round" stroke-miterlimit="10" d="M400.076,152.316
+		c0-25.644,20.789-46.432,46.433-46.432c25.646,0,46.434,20.788,46.434,46.432"/>
+	
+		<line fill="none" stroke="#D1D1D1" stroke-width="22" stroke-linecap="round" stroke-miterlimit="10" x1="400.076" y1="152.316" x2="400.076" y2="195.357"/>
+	
+		<line fill="none" stroke="#D1D1D1" stroke-width="22" stroke-linecap="round" stroke-miterlimit="10" x1="492.942" y1="152.316" x2="492.942" y2="195.357"/>
+</g>
+</svg>

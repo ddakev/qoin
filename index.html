@@ -7,11 +7,14 @@
         <script src="animations.js"></script>
     </head>
     <body>
-        <form>
-            <input type="text" name="email" class="form-textbox" placeholder="email address" />
-            <input type="password" name="password" class="form-textbox" placeholder="password" />
-            <input type="button" value="Login" class="form-button" />
-            <input type="button" value="Register" class="form-link" />
-        </form>
+        <div id="login-container">
+            <div id="login-logo"></div>
+            <form>
+                <input type="text" name="email" class="form-textbox" placeholder="email address" />
+                <input type="password" name="password" class="form-textbox" placeholder="password" />
+                <a href='dash.html' id='login_button'><input type="button" value="LOGIN" class="form-button" /></a>
+                <a href='#' id='register_button'><input type="button" value="Register" class="form-link" /></a>
+            </form>
+        </div>
     </body>
 </html>

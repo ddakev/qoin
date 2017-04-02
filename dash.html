@@ -9,45 +9,79 @@
     </head>
     <body>
         <div id="sidebar">
-            <div class="sidebar-item" id="sidebar-dash-button">
+            <a class="sidebar-item" id="sidebar-dash-button" href='dash.html'>
                 <span class="big-text gain">$2341</span><br>
                 <span class="tiny-text">invested</span><br>
                 <span class="big-text gain">+$135</span><br>
                 <span class="tiny-text">profits</span><br>
                 <span class="big-text">Dashboard</span>
-            </div>
-            <div class="sidebar-item loss">
-                ETH (-1.61%)
-            </div>
-            <div class="sidebar-item gain">
-                BTC (+2.59%)
-            </div>
-            <div class="sidebar-item gain">
-                XRP (+23.39%)
-            </div>
-            <div class="sidebar-item loss">
-                DASH (-11.62%)
-            </div>
-            <div class="sidebar-item loss">
-                LTC (-0.59%)
-            </div>
-            <div class="sidebar-item loss">
-                XMR (-1.50%)
-            </div>
-            <div class="sidebar-item gain">
-                ETC (+3.30%)
-            </div>
-            <div class="sidebar-item gain">
-                REP (+22.27%)
-            </div>
-            <div class="sidebar-item gain">
-                XEM (+3.91%)
-            </div>
-            <div class="sidebar-item gain">
-                MAID (+3.21%)
-            </div>
+            </a>
+            <a class="sidebar-item loss" href='coin_profile.html?c=ETH'>
+                <div class='coin-info'>
+                    <span class='coin-name'>ETH</span>
+                    <span class='coin-gain'>-1.61%</span>
+                </div>
+            </a>
+            <a class="sidebar-item gain" href='coin_profile.html?c=BTC'>
+                <div class='coin-info'>
+                    <span class='coin-name'>BTC</span>
+                    <span class='coin-gain'>+2.59%</span>
+                </div>
+            </a>
+            <a class="sidebar-item gain" href='coin_profile.html?c=XRP'>
+                <div class='coin-info'>
+                    <span class='coin-name'>XRP</span>
+                    <span class='coin-gain'>+23.39%</span>
+                </div>
+            </a>
+            <a class="sidebar-item loss" href='coin_profile.html?c=DASH'>
+                <div class='coin-info'>
+                    <span class='coin-name'>DASH</span>
+                    <span class='coin-gain'>-11.62%</span>
+                </div>
+            </a>
+            <a class="sidebar-item loss" href='coin_profile.html?c=LTC'>
+                <div class='coin-info'>
+                    <span class='coin-name'>LTC</span>
+                    <span class='coin-gain'>-0.59%</span>
+                </div>
+            </a>
+            <a class="sidebar-item loss" href='coin_profile.html?c=XMR'>
+                <div class='coin-info'>
+                    <span class='coin-name'>XMR</span>
+                    <span class='coin-gain'>-1.50%</span>
+                </div>
+            </a>
+            <a class="sidebar-item gain" href='coin_profile.html?c=ETC'>
+                <div class='coin-info'>
+                    <span class='coin-name'>ETC</span>
+                    <span class='coin-gain'>+3.30%</span>
+                </div>
+            </a>
+            <a class="sidebar-item gain" href='coin_profile.html?c=REP'>
+                <div class='coin-info'>
+                    <span class='coin-name'>REP</span>
+                    <span class='coin-gain'>+22.27%</span>
+                </div>
+            </a>
+            <a class="sidebar-item gain" href='coin_profile.html?c=XEM'>
+                <div class='coin-info'>
+                    <span class='coin-name'>XEM</span>
+                    <span class='coin-gain'>+3.91%</span>
+                </div>
+            </a>
+            <a class="sidebar-item gain" href='coin_profile.html?c=MAID'>
+                <div class='coin-info'>
+                    <span class='coin-name'>MAID</span>
+                    <span class='coin-gain'>+3.21%</span>
+                </div>
+            </a>
         </div>
         <div id="dash-content" class="content">
+            <div class='tab-bar'>
+                <div class='tab-button'>hidden</div>
+                <div id='menu-btn'><img src='ham-menu-icon.svg'/></div>
+            </div>
             <div class='graph'>
                 <canvas id="dash-graph"></canvas>
                 <div class='graph-controls'>
@@ -61,7 +95,8 @@
             </div>
             <span class="big-text gain">+$135</span>
             <span class="medium-text">$2341 invested</span>
-            <input type="button" class="form-button medium-text" id="sell-btn" value="Sell now ($2476)" />
+            <span class="medium-text">Current worth: $2476</span>
+            <input type="button" class="form-button medium-text" id="sell-btn" value="Sell" />
         </div>
     </body>
 </html>
