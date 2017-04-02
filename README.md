@@ -1,0 +1,2 @@
+# qoin
+Cryptocurrency trading app
